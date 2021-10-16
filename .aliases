@@ -1,0 +1,10 @@
+#!/bin/bash
+
+alias ls='exa -l --tree -L 1'
+alias la='exa -a'
+alias toff='uptime && sleep 2 && shutdown now'
+
+alias v='vim'
+alias nv='nvim'
+alias p='python'
+

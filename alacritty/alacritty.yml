@@ -1,0 +1,80 @@
+#  ____ _        ___        __
+# / ___| |      / \ \      / /
+#| |   | |     / _ \ \ /\ / /
+#| |___| |___ / ___ \ V  V /
+# \____|_____/_/   \_\_/\_/
+#
+# Clawbhaiya's alacritty config file
+
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    # Font family
+    # Default:
+    family: "Iosevka Term"
+  size: 11.0
+
+
+ayu-dark: &ayu-dark
+  primary:
+    background: '0x0f1419'
+    foreground: '0xe6e1cf'
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xf34a4a'
+    green:   '0xbae67e'
+    yellow:  '0xffee99'
+    blue:    '0x73d0ff'
+    magenta: '0xd4bfff'
+    cyan:    '0x83CEC6'
+    white:   '0xf2f2f2'
+
+  # Bright colors
+  bright:
+    black:   '0x737d87'
+    red:     '0xff3333'
+    green:   '0xc2d94c'
+    yellow:  '0xe7c547'
+    blue:    '0x59c2ff'
+    magenta: '0xb77ee0'
+    cyan:    '0x5ccfe6'
+    white:   '0xffffff'
+
+colors: *ayu-dark
+
+# Background opacity
+#
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 0.9
+
+cursor:
+  # Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Beam
+
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: Off
+
+
+key_bindings:
+  - { key: Left,     mods: Control, chars: "\x1b[1;5D" }
+  - { key: Right,    mods: Control, chars: "\x1b[1;5C" }
+  - { key: Up,       mods: Control, chars: "\x1b[1;5A" }
+  - { key: Down,     mods: Control, chars: "\x1b[1;5B" }
+
