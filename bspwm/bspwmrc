@@ -27,4 +27,4 @@ nm-applet &
 volumeicon &
 picom &
 blueman-applet &
-/home/ayush/.config/polybar/launch.sh --forest &
+/home/$(whoami)/.config/polybar/launch.sh &
