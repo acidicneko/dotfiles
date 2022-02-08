@@ -65,6 +65,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", "10", "-fn", dmenufon
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *maimcmd[] = {"/home/inu/.config/scripts/maim.sh", "full", NULL};
 static const char *maimpart[] = {"/home/inu/.config/scripts/maim.sh", "part", NULL};
+static const char *doomcmd[] = {"emacsclient", "-c", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -103,6 +104,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_c,      quit,           {0} },
     { MODKEY,                       XK_p,      spawn,          {.v = maimcmd } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = maimpart } },
+    { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = doomcmd} },
 };
 
 /* button definitions */
