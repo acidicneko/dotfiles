@@ -1,0 +1,67 @@
+general {
+    output_format = "i3bar"    
+    colors = false
+    markup = pango
+    interval = 5
+    color_good = '#2f343f'
+    color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
+}
+
+order += "cpu_temperature 0"
+order += "wireless wlp1s0"
+order += "volume master"
+order += "battery 0"
+order += "tztime local"
+
+load {
+        format = "<span background='#eo6c75'> %5min Load </span>"
+}
+
+cpu_temperature 0 {
+        format = "<span background='#e06c75' foreground='#282c43'>  </span><span background='#abb2bf' foreground='#282c34'> %degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+disk "/" {
+        format = "<span background='#fec7cd'>  %free Free </span>"
+}
+
+disk "/home" {
+        format = "<span background='#a1d569'>  %free Free </span>"
+}
+
+ethernet enp1s0 {
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+}
+
+wireless wlp1s0 {
+        format_up = "<span background='#98c379' foreground='#282c34'>  </span><span background='#abb2bf' foreground='#282c34'>%essid </span>"
+        format_down = "<span background='#b48ead'>  Disconnected </span>"
+}
+
+volume master {
+        format = "<span background='#ebcb8b' foreground='#282c34'> 墳 </span><span background='#abb2bf' foreground='#282c34'> %volume </span>"
+        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 0 {
+	last_full_capacity = true
+        format = "<span background='#61afef' foreground='#282c34'> %status </span><span background='#abb2bf' foreground='#282c34'> %percentage </span>"
+        format_down = "No Battery"
+        status_chr = ""
+        status_bat = ""
+        status_unk = "Unknown"
+        status_full = ""
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime local {
+    format = "<span background='#56b6c2' foreground='#282c34'>  </span><span background='#abb2bf' foreground='#282c34'> %H:%M </span>"
+    timezone = "Asia/Kolkata"
+}
