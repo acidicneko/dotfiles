@@ -53,15 +53,15 @@ stop i3
 start suckless
 
 print Installing DWM
-exec make -C $RCI/suckless/dwm
+exec make install -C $RCI/suckless/dwm
 endl
 
 print Installing DWMblocks
-exec make -C $RCI/suckless/dwmblocks
+exec make install -C $RCI/suckless/dwmblocks
 endl
 
 print Installing DMenu
-exec make -C $RCI/suckless/dmenu
+exec make install -C $RCI/suckless/dmenu
 endl
 
 stop suckless
