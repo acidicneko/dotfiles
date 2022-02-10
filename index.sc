@@ -50,3 +50,19 @@ endl
 stop i3
 
 
+start suckless
+
+print Installing DWM
+exec make -C $RCI/suckless/dwm
+endl
+
+print Installing DWMblocks
+exec make -C $RCI/suckless/dwmblocks
+endl
+
+print Installing DMenu
+exec make -C $RCI/suckless/dmenu
+endl
+
+stop suckless
+
