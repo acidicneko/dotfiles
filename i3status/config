@@ -61,7 +61,9 @@ battery 0 {
         low_threshold = 10
 }
 
+
 tztime local {
-    format = "<span background='#56b6c2' foreground='#282c34'>  </span><span background='#abb2bf' foreground='#282c34'> %H:%M </span>"
-    timezone = "Asia/Kolkata"
+	#format = "<span background='#8be9fd'>  </span><span background='#e5e9f0'> %time </span>"
+	format = "<span background='#56b6c2' foreground='#282c34'>  </span><span background='#abb2bf' foreground='#282c34'> %time </span>"	
+	format_time = "%a %-d %b %H:%M"
 }

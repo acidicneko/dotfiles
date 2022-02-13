@@ -23,6 +23,24 @@ endl
 
 stop common
 
+start common_no_personal
+
+print Installing Alacritty config
+alacritty/alacritty.yml=$HOME/.config/alacritty/alacritty.yml
+endl
+
+print Installing Iosevka Nerd Font
+fonts/IosevkaNerdFont.ttf=$HOME/.local/share/fonts/IosevkaNerdFont.ttf
+exec fc-cache -fv
+endl
+
+print Installing Picom config
+picom/picom.conf=$HOME/.config/picom/picom.conf
+endl
+
+stop common_no_personal
+
+
 
 start bspwm
 
