@@ -1,0 +1,85 @@
+general {
+    output_format = "i3bar"    
+    colors = false
+    markup = pango
+    separator = ""
+    interval = 5
+    color_good = '#2f343f'
+    color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
+}
+
+
+order += "disk /"
+order += "cpu_temperature 0"
+order += "wireless wlp1s0"
+order += "volume master"
+order += "battery 0"
+order += "tztime local"
+
+load {
+        format = "<span background='#eo6c75'> text</span>"
+        separator_block_width = 0
+}
+
+
+cpu_temperature 0 {
+        #format = "<span background='#e06c75' foreground='#282c43'>  </span><span background='#abb2bf' foreground='#282c34'> %degrees °C </span>"
+        
+        format = "<span background='#d79921' foreground='#282828'>   %degrees °C </span><span background='#d79921' foreground='#b57614'></span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+        separator_block_width = -1
+}
+
+disk "/" {
+        format = "<span background='#ebdbb2' foreground='#d79921'></span>"
+        separator_block_width = -1
+}
+
+disk "/home" {
+        format = "<span background='#a1d569'>  %free Free </span>"
+        separator_block_width = -1
+}
+
+ethernet enp1s0 {
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+        separator_block_width = -1
+}
+
+wireless wlp1s0 {
+        format_up = "<span background='#b57614' foreground='#282828'>   %essid </span><span background='#b57614' foreground='#fabd2f'></span>"
+        format_down = "<span background='#b48ead'>  Disconnected </span>"
+        separator_block_width = -1
+}
+
+volume master {
+        format = "<span background='#fabd2f' foreground='#504945'> 墳 %volume </span><span background='#fabd2f' foreground='#a89984'></span>"
+        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+        separator_block_width = -1
+}
+
+battery 0 {
+	last_full_capacity = true
+        format = "<span background='#a89984' foreground='#282828'> %status %percentage </span><span background='#a89984' foreground='#d3869b'></span>"
+        format_down = "No Battery"
+        status_chr = ""
+        status_bat = ""
+        status_unk = "Unknown"
+        status_full = ""
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+        separator_block_width = -1
+}
+
+
+tztime local {
+	#format = "<span background='#8be9fd'>  </span><span background='#e5e9f0'> %time </span>"
+	format = "<span background='#d3869b' foreground='#282828'>   %H:%M </span><span background='#d3869b' foreground='#e5ceae'></span>"	
+
+	#format_time = "%a %-d %b %H:%M"
+  separator_block_width = -6
+}

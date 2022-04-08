@@ -55,17 +55,32 @@ endl
 stop bspwm
 
 
-start i3
+start i3_onedark
 
 print Installing i3 config
-i3/config=$HOME/.config/i3/config
+i3_onedark/i3/config=$HOME/.config/i3/config
 endl
 
 print Installing i3status config
-i3status/config=$HOME/.config/i3status/config
+i3_onedark/i3status/config=$HOME/.config/i3status/config
 endl
 
-stop i3
+stop i3_onedark
+
+
+start i3_gruvbox_light
+
+print Installing i3 config
+i3_gruvbox_light/i3/config=$HOME/.config/i3/config
+endl
+
+print Installing i3status config
+i3_gruvbox_light/i3status/config=$HOME/.config/i3status/config
+endl
+
+
+stop i3_gruvbox_light
+
 
 
 start suckless
